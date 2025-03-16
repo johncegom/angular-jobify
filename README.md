@@ -1,59 +1,149 @@
 # Jobify
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+A modern job board platform connecting job seekers and employers in real-time.
 
-## Development server
+![Jobify Banner](assets/images/banner.png)
 
-To start a local development server, run:
+## Overview
 
-```bash
+Jobify is a modern **Job Board Platform** built with **Angular** and **Firebase**, offering real-time job postings, authentication, and role-based access control (RBAC). The platform enables **job seekers** to explore and apply for jobs, while **employers** can post and manage job listings. **Admin users** oversee the system, ensuring a smooth and secure experience for all users.
+
+## Features
+
+### MVP Features
+
+- User authentication with role-based access (Job Seekers, Employers)
+- Job posting and management for employers
+- Job browsing and application for job seekers
+- Responsive design (mobile and desktop support)
+- Basic search and filter functionality
+
+### Planned Features
+
+- Admin panel with moderation tools
+- Advanced search and filtering options
+- Resume management for job seekers
+- Premium features and subscription model
+- Analytics dashboard for employers and admins
+
+## Tech Stack
+
+- **Frontend:** Angular (Standalone Components, Angular Material, SCSS)
+- **Backend & Database:** Firebase (Firestore, Authentication)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16+)
+- Angular CLI (latest)
+- Firebase CLI
+
+### Installation
+
+1. Clone the repository
+
+```
+git clone https://github.com/yourusername/jobify.git
+cd jobify
+```
+
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Set up Firebase
+
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+   - Enable Authentication and Firestore
+   - Add your Firebase config to environment files
+
+4. Run the development server
+
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+5. Navigate to `http://localhost:4200/`
 
-## Code scaffolding
+## Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── core/              # Core functionality
+│   │   ├── models/        # Data models and interfaces
+│   │   └── services/      # Core services (auth, etc.)
+│   ├── features/          # Feature modules
+│   │   ├── auth/          # Authentication feature
+│   │   │   └── components/# Login, Register components
+│   │   └── home/          # Home feature
+│   ├── shared/            # Shared components
+│   │   └── components/    # Reusable UI components
+│   │       ├── footer/
+│   │       ├── nav-bar/
+│   │       └── not-found/
+│   ├── app.component.*    # Root component
+│   ├── app.config.ts      # App configuration
+│   └── app.routes.ts      # Application routes
+├── assets/                # Static assets
+├── environments/          # Environment configurations
+│   ├── environment.ts     # Development environment
+│   └── environment.development.ts
+└── styles/                # Global styles
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Environment Configuration
 
-```bash
-ng generate --help
+The application requires Firebase configuration in the environment files. Create a `src/environments/environment.ts` file with the following structure:
+
+```typescript
+export const environment = {
+  production: false, // or true for production
+  firebase: {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID",
+  },
+};
 ```
 
-## Building
+## Development Roadmap
 
-To build the project run:
+The project is being developed in phases:
 
-```bash
-ng build
-```
+1. **Phase 1: MVP** (7-8 weeks)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   - Core authentication
+   - Job posting and browsing
+   - Basic application process
+   - Responsive UI implementation
 
-## Running unit tests
+2. **Phase 2: Enhancements**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   - Admin functionality
+   - Advanced search features
+   - Resume management
+   - UI/UX improvements
 
-```bash
-ng test
-```
+3. **Phase 3: Advanced Features**
+   - Premium features
+   - Analytics system
+   - Integration expansions
 
-## Running end-to-end tests
+## Contributing
 
-For end-to-end (e2e) testing, run:
+This is a personal project but suggestions and feedback are welcome. Please feel free to open issues for bugs or feature requests.
 
-```bash
-ng e2e
-```
+## License
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2025 Jobify. All rights reserved.
