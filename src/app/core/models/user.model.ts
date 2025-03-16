@@ -6,8 +6,8 @@ export interface User {
   displayName?: string;
   photoURL?: string;
   role: UserRole;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface JobSeekerProfile extends User {
