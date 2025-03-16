@@ -157,6 +157,9 @@ Expanding the platform with sophisticated features that add significant value an
 ## Tech Stack
 
 - **Frontend:** Angular (Standalone Components, Angular Material, SCSS)
+  - Angular Material for UI components
+  - Custom SCSS theming for branded appearance
+  - Responsive design with Angular Flex Layout
 - **Backend & Database:** Firebase (Firestore, Authentication)
 - **Deployment:** Firebase Hosting
 
