@@ -10,12 +10,15 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^19.2.3",
     "@angular/common": "^19.2.0",
     "@angular/compiler": "^19.2.0",
     "@angular/core": "^19.2.0",
     "@angular/forms": "^19.2.0",
+    "@angular/material": "^19.2.3",
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
+    "@angular/fire": "19.0.0",
     "@angular/router": "^19.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -33,5 +36,20 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.7.2"
-  }
+  },
+  "@angular/fire": {
+    "@angular/core": "$@angular/core",
+    "@angular/common": "$@angular/common",
+    "@angular/platform-browser": "$@angular/platform-browser",
+    "@angular/platform-browser-dynamic": "$@angular/platform-browser-dynamic"
+  },
+  "description": "A job board application built with Angular and Material Design.",
+  "author": "Minh Duong",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "material",
+    "job board",
+    "jobify"
+  ]
 }
