@@ -34,9 +34,9 @@ import { UserRole } from '../models/roles.model';
   providedIn: 'root',
 })
 export class AuthService {
-  private auth = inject(Auth);
-  private firestore = inject(Firestore);
-  private router = inject(Router);
+  private _auth = inject(Auth);
+  private _firestore = inject(Firestore);
+  private _router = inject(Router);
 
   // Add signal for current user
   currentUser = signal<User | null>(null);
@@ -44,7 +44,7 @@ export class AuthService {
 
   constructor() {
     // Subscribe to Firebase auth state changes
-    onAuthStateChanged(this.auth, (firebaseUser) => {
+    onAuthStateChanged(this._auth, (firebaseUser) => {
       if (firebaseUser) {
         // User is signed in
         // Create a basic user object with information from Auth service
@@ -57,7 +57,7 @@ export class AuthService {
         };
 
         // Reference to user's document in Firestore
-        const userDocRef = doc(this.firestore, 'users', firebaseUser.uid);
+        const userDocRef = doc(this._firestore, 'users', firebaseUser.uid);
 
         // Fetch additional user data from Firestore
         getDoc(userDocRef)
